@@ -1,8 +1,8 @@
 package main
 
 import (
-	d "./deterministics"
 	"fmt"
+	d "github.com/joekir/deterministics/lib"
 )
 
 func main() {
