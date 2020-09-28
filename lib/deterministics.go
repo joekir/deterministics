@@ -1,7 +1,7 @@
 package deterministics
 
 import (
-	"crypto/rsa"
+	rsa "github.com/acalatrava/deterministicrsa"
 	"crypto/sha256"
 	"crypto/x509"
 	"encoding/asn1"
