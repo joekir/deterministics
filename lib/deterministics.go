@@ -1,15 +1,17 @@
 package deterministics
 
 import (
+	// Import local vendor/crypto/rsa module that is pinned pre go 1.11 when they removed determinism
 	"crypto/rsa"
 	"crypto/sha256"
 	"crypto/x509"
 	"encoding/asn1"
 	"encoding/binary"
 	"encoding/pem"
-	"golang.org/x/crypto/pbkdf2"
 	"math/rand"
 	"os"
+
+	"golang.org/x/crypto/pbkdf2"
 )
 
 func DeriveKeys(passphrase, privateKeyFile, pubKeyFile string) error {
@@ -43,7 +45,7 @@ func savePrivatePEMKey(fileName string, key *rsa.PrivateKey) error {
 	defer outFile.Close()
 
 	var privateKey = &pem.Block{
-		Type:  "PRIVATE KEY",
+		Type:  "RSA PRIVATE KEY",
 		Bytes: x509.MarshalPKCS1PrivateKey(key),
 	}
 

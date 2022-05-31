@@ -16,6 +16,15 @@ done elsewhere. Hence asymmetric keys make sense.
 
 This was inspired by the response to a question by Thomas Pornin:
 https://crypto.stackexchange.com/a/1665/7763
- 
- 
+
+### Testing
+
+```
+$ go build
+$ ./deterministics mypassphrase
+KeyGen Complete.
+$ go test
+PASS
+ok      github.com/joekir/deterministics        0.013s
+```
 
